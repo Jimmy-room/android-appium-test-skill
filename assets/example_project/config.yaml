@@ -1,0 +1,15 @@
+# 以下环境变量由本地终端或 CI 凭据管理系统提供。
+server:
+  url: "${APPIUM_SERVER_URL}"
+devices:
+  local:
+    platformName: Android
+    automationName: UiAutomator2
+    deviceName: "${ANDROID_DEVICE_NAME}"
+    udid: "${ANDROID_DEVICE_UDID}"
+apps:
+  demo:
+    appPackage: "${ANDROID_APP_PACKAGE}"
+    appActivity: "${ANDROID_APP_ACTIVITY}"
+common:
+  noReset: false

@@ -1,0 +1,26 @@
+# 仅展示格式。定位符、流程与预期必须替换为真实 App 的已确认信息。
+features:
+  - key: sign_in
+    name: 登录
+    locators:
+      account: [id, "org.example.demo:id/account"]
+      submit: [id, "org.example.demo:id/submit"]
+      message: [id, "org.example.demo:id/message"]
+    scenarios:
+      - name: 有效账号登录
+        category: normal
+        objective: 验证有效账号可以登录
+        preconditions: ["已打开登录页", "账号已在测试环境中创建"]
+        steps:
+          - {action: type, target: account, value: "${TEST_ACCOUNT}"}
+          - {action: tap, target: submit}
+        expected:
+          - {check: text_contains, target: message, value: "欢迎"}
+      - name: 空账号提交
+        category: boundary
+        objective: 验证账号必填提示
+        preconditions: ["已打开登录页"]
+        steps:
+          - {action: tap, target: submit}
+        expected:
+          - {check: visible, target: message}

@@ -1,0 +1,12 @@
+# Python caches and local test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+android-test-runs/
+runs/
+allure-results/
+allure-report/
+local-profile.json
+.env

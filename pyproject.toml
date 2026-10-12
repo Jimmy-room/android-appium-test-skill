@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "android-appium-test-skill"
+version = "0.2.1"
+description = "Reusable Android Appium and Pytest test skill"
+requires-python = ">=3.10"
+dependencies = [
+  "Appium-Python-Client==5.3.1",
+  "selenium==4.46.0",
+  "PyYAML==6.0.3",
+  "pytest==9.1.1",
+  "allure-pytest==2.16.0",
+]
+
+[project.optional-dependencies]
+case-files = ["python-docx>=1.1", "openpyxl>=3.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
